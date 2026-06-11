@@ -1,14 +1,140 @@
 {
-  "common": { "appName": "PediCare AI", "logout": "Chiqish", "loading": "Yuklanmoqda...", "cancel": "Bekor qilish", "save": "Saqlash", "back": "Orqaga", "search": "Qidirish", "send": "Yuborish" },
-  "nav": { "home": "Bosh sahifa", "aiChat": "AI tekshiruv", "doctors": "Shifokorlar", "children": "Bolalar", "history": "Tarix", "vaccines": "Emlashlar", "queue": "Triaj navbati", "schedule": "Jadval" },
-  "auth": { "loginTitle": "Xush kelibsiz", "registerTitle": "Hisob yaratish", "email": "Email", "password": "Parol", "name": "To'liq ism", "iAmParent": "Men ota-onaman", "iAmDoctor": "Men shifokorman", "loginBtn": "Kirish", "registerBtn": "Ro'yxatdan o'tish", "noAccount": "Hisob yo'qmi? Ro'yxatdan o'ting", "haveAccount": "Hisob bormi? Kirish" },
-  "home": { "greeting": "Salom, {{name}}!", "quickActions": "Tezkor amallar", "startAiCheck": "AI tekshiruvni boshlash", "bookDoctor": "Shifokorga yozilish", "nextAppointment": "Keyingi qabul", "noAppointments": "Rejalashtirilgan qabullar yo'q", "nextVaccine": "Keyingi emlash" },
-  "chat": { "title": "AI simptom tekshiruvi", "checkingFor": "Kim uchun", "typing": "AI yozmoqda...", "restart": "Qaytadan boshlash", "connectDoctor": "Pediatr bilan bog'lanish", "verdictGreen": "Uyda nazorat qilsa bo'ladi", "verdictYellow": "Yaqin orada shifokorga ko'rining", "verdictRed": "Shoshilinch — hozir shifokor kerak", "disclaimer": "Bu tibbiy tashxis emas. Shubhalansangiz, shifokorga murojaat qiling." },
-  "doctors": { "title": "Pediatrlar", "searchPlaceholder": "Ism yoki mutaxassislik bo'yicha qidirish", "experience": "{{years}} yil tajriba", "reviews": "{{count}} ta sharh", "chooseSlot": "Vaqtni tanlang", "book": "Yozilish", "confirmTitle": "Yozilishni tasdiqlang", "confirmed": "Yozilish tasdiqlandi!", "forChild": "Bola uchun" },
-  "children": { "title": "Bolalarim", "addChild": "Bola qo'shish", "editChild": "Tahrirlash", "name": "Ism", "birthDate": "Tug'ilgan sana", "weight": "Vazn, kg", "height": "Bo'y, sm", "allergies": "Allergiyalar (vergul bilan)", "active": "Faol", "makeActive": "Faol qilish", "empty": "Hozircha bolalar yo'q. Boshlash uchun birinchi bolani qo'shing." },
-  "history": { "title": "Tarix", "empty": "Hozircha konsultatsiyalar yo'q", "aiCheck": "AI tekshiruv", "consultation": "Konsultatsiya", "conclusion": "Shifokor xulosasi" },
-  "vaccines": { "title": "Emlash kalendari", "done": "Bajarildi", "upcoming": "Kutilmoqda", "overdue": "Muddati o'tgan", "dueAge": "Tavsiya etilgan yosh" },
-  "doctor": { "queueTitle": "Triaj navbati", "emptyQueue": "Kutilayotgan holatlar yo'q — ajoyib!", "accept": "Holatni qabul qilish", "open": "Ochish", "caseTitle": "Holat", "transcript": "AI chat stenogrammasi", "childInfo": "Bola haqida", "age": "Yosh", "chatWithParent": "Ota-ona bilan chat", "writeConclusion": "Xulosa", "conclusionPlaceholder": "Tashxis, tavsiyalar, kuzatuv...", "closeCase": "Holatni yopish", "statusNew": "Yangi", "statusAccepted": "Jarayonda", "statusClosed": "Yopilgan", "scheduleTitle": "Mening jadvalim", "noVisits": "Yozilishlar yo'q" },
-  "urgency": { "green": "Past", "yellow": "O'rtacha", "red": "Shoshilinch" },
-  "notFound": { "title": "Sahifa topilmadi", "goHome": "Bosh sahifaga" }
+  "common": {
+    "appName": "PediCare AI",
+    "logout": "Chiqish",
+    "loading": "Yuklanmoqda...",
+    "cancel": "Bekor qilish",
+    "save": "Saqlash",
+    "back": "Orqaga",
+    "search": "Qidirish",
+    "send": "Yuborish"
+  },
+  "nav": {
+    "home": "Bosh sahifa",
+    "aiChat": "AI tekshiruv",
+    "doctors": "Shifokorlar",
+    "children": "Bolalar",
+    "history": "Tarix",
+    "vaccines": "Emlashlar",
+    "queue": "Triaj navbati",
+    "schedule": "Jadval"
+  },
+  "auth": {
+    "loginTitle": "Xush kelibsiz",
+    "registerTitle": "Hisob yaratish",
+    "email": "Email",
+    "password": "Parol",
+    "name": "To'liq ism",
+    "iAmParent": "Men ota-onaman",
+    "iAmDoctor": "Men shifokorman",
+    "loginBtn": "Kirish",
+    "registerBtn": "Ro'yxatdan o'tish",
+    "noAccount": "Hisob yo'qmi? Ro'yxatdan o'ting",
+    "haveAccount": "Hisob bormi? Kirish"
+  },
+  "home": {
+    "greeting": "Salom, {{name}}!",
+    "quickActions": "Tezkor amallar",
+    "startAiCheck": "AI tekshiruvni boshlash",
+    "bookDoctor": "Shifokorga yozilish",
+    "nextAppointment": "Keyingi qabul",
+    "noAppointments": "Rejalashtirilgan qabullar yo'q",
+    "nextVaccine": "Keyingi emlash"
+  },
+  "chat": {
+    "title": "AI simptom tekshiruvi",
+    "checkingFor": "Kim uchun",
+    "typing": "AI yozmoqda...",
+    "restart": "Qaytadan boshlash",
+    "connectDoctor": "Pediatr bilan bog'lanish",
+    "verdictGreen": "Uyda nazorat qilsa bo'ladi",
+    "verdictYellow": "Yaqin orada shifokorga ko'rining",
+    "verdictRed": "Shoshilinch — hozir shifokor kerak",
+    "disclaimer": "Bu tibbiy tashxis emas. Shubhalansangiz, shifokorga murojaat qiling."
+  },
+  "doctors": {
+    "title": "Pediatrlar",
+    "searchPlaceholder": "Ism yoki mutaxassislik bo'yicha qidirish",
+    "experience": "{{years}} yil tajriba",
+    "reviews": "{{count}} ta sharh",
+    "chooseSlot": "Vaqtni tanlang",
+    "book": "Yozilish",
+    "confirmTitle": "Yozilishni tasdiqlang",
+    "confirmed": "Yozilish tasdiqlandi!",
+    "forChild": "Bola uchun"
+  },
+  "children": {
+    "title": "Bolalarim",
+    "addChild": "Bola qo'shish",
+    "editChild": "Tahrirlash",
+    "name": "Ism",
+    "birthDate": "Tug'ilgan sana",
+    "weight": "Vazn, kg",
+    "height": "Bo'y, sm",
+    "allergies": "Allergiyalar (vergul bilan)",
+    "active": "Faol",
+    "makeActive": "Faol qilish",
+    "empty": "Hozircha bolalar yo'q. Boshlash uchun birinchi bolani qo'shing."
+  },
+  "history": {
+    "title": "Tarix",
+    "empty": "Hozircha konsultatsiyalar yo'q",
+    "aiCheck": "AI tekshiruv",
+    "consultation": "Konsultatsiya",
+    "conclusion": "Shifokor xulosasi"
+  },
+  "vaccines": {
+    "title": "Emlash kalendari",
+    "done": "Bajarildi",
+    "upcoming": "Kutilmoqda",
+    "overdue": "Muddati o'tgan",
+    "dueAge": "Tavsiya etilgan yosh"
+  },
+  "doctor": {
+    "queueTitle": "Triaj navbati",
+    "emptyQueue": "Kutilayotgan holatlar yo'q — ajoyib!",
+    "accept": "Holatni qabul qilish",
+    "open": "Ochish",
+    "caseTitle": "Holat",
+    "transcript": "AI chat stenogrammasi",
+    "childInfo": "Bola haqida",
+    "age": "Yosh",
+    "chatWithParent": "Ota-ona bilan chat",
+    "writeConclusion": "Xulosa",
+    "conclusionPlaceholder": "Tashxis, tavsiyalar, kuzatuv...",
+    "closeCase": "Holatni yopish",
+    "statusNew": "Yangi",
+    "statusAccepted": "Jarayonda",
+    "statusClosed": "Yopilgan",
+    "scheduleTitle": "Mening jadvalim",
+    "noVisits": "Yozilishlar yo'q"
+  },
+  "urgency": {
+    "green": "Past",
+    "yellow": "O'rtacha",
+    "red": "Shoshilinch"
+  },
+  "notFound": {
+    "title": "Sahifa topilmadi",
+    "goHome": "Bosh sahifaga"
+  },
+  "script": {
+    "greeting": "Salom! Men PediCare yordamchisiman. Bolangizni nima bezovta qilmoqda?",
+    "askDuration": "Tushunarli. Bu qachondan beri davom etmoqda?",
+    "askSeverity": "Bola g'ayrioddiy uyquchanmi, suyuqlik ichishdan bosh tortyaptimi yoki nafas olishi qiyinmi?",
+    "fever": "Isitma",
+    "cough": "Yo'tal",
+    "rash": "Toshma",
+    "stomach": "Qorin og'rig'i",
+    "lessDay": "Bir kundan kam",
+    "fewDays": "1-3 kun",
+    "moreDays": "3 kundan ko'p",
+    "none": "Bularning hech biri",
+    "fluids": "Ichishdan bosh tortyapti",
+    "drowsy": "G'ayrioddiy uyquchan",
+    "breathing": "Nafas olishi qiyin",
+    "verdictGreen": "Javoblaringizga ko'ra, uyda nazorat qilsa bo'ladi: dam olish, suyuqlik va kuzatuv. Biror narsa o'zgarsa, tekshiruvni qayta o'tkazing.",
+    "verdictYellow": "Bolani 24 soat ichida pediatrga ko'rsatishni tavsiya qilaman. Hozir bog'lab beraman.",
+    "verdictRed": "Bu belgilar shoshilinch e'tibor talab qiladi. Hozir pediatr bilan bog'laning yoki tez yordam chaqiring."
+  }
 }
