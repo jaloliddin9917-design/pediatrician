@@ -145,3 +145,33 @@
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
 }
+
+/* Landing page motion */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(2deg); }
+}
+
+@keyframes blob-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -24px) scale(1.06); }
+  66% { transform: translate(-20px, 18px) scale(0.96); }
+}
+
+.anim-fade-up {
+  opacity: 0;
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.anim-float {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.anim-blob {
+  animation: blob-drift 18s ease-in-out infinite;
+}
