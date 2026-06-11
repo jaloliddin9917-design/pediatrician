@@ -18,7 +18,16 @@ Tailwind CSS v4 · Effector · react-router v7 · i18next (EN/RU/UZ)
     npm test       # vitest unit tests
     npm run build  # typecheck + production build
 
+## Docker
+
+One container builds and serves the whole app (nginx + SPA fallback):
+
+    docker build -t pedicare-ai .
+    docker run -p 8080:80 pedicare-ai
+    # open http://localhost:8080
+
 ## Demo
 
-Log in with any email/password. Pick "I'm a parent" or "I'm a doctor" to
-enter the respective side.
+The landing page at `/` shows the platform and its Clinical AI /
+Operations AI feature suite. Log in with any email/password. Pick
+"I'm a parent" or "I'm a doctor" to enter the respective side.
