@@ -61,7 +61,7 @@ export default function DoctorProfilePage() {
         <CardContent className="grid gap-4 p-5">
           <div className="flex items-center gap-4">
             <Avatar className="size-16">
-              <AvatarFallback className="bg-secondary text-xl">{doctor.name.split(' ').at(-1)?.[0]}</AvatarFallback>
+              <AvatarFallback className="bg-gradient-to-br from-sky-400 to-violet-400 text-xl font-bold text-white">{doctor.name.split(' ').at(-1)?.[0]}</AvatarFallback>
             </Avatar>
             <div>
               <h1 className="text-lg font-bold">{doctor.name}</h1>

@@ -99,7 +99,7 @@ export default function ChildrenPage() {
             <Card key={child.id}>
               <CardContent className="flex items-start gap-3 p-4">
                 <Avatar className="size-12">
-                  <AvatarFallback className="bg-secondary text-lg">{child.name[0]}</AvatarFallback>
+                  <AvatarFallback className="bg-gradient-to-br from-sky-400 to-violet-400 text-lg font-bold text-white">{child.name[0]}</AvatarFallback>
                 </Avatar>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2">

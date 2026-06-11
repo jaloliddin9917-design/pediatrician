@@ -44,7 +44,7 @@ export default function DoctorsPage() {
                 <Card className="transition-shadow hover:shadow-md">
                   <CardContent className="flex items-center gap-3 p-4">
                     <Avatar className="size-12">
-                      <AvatarFallback className="bg-secondary">{d.name.split(' ').at(-1)?.[0]}</AvatarFallback>
+                      <AvatarFallback className="bg-gradient-to-br from-sky-400 to-violet-400 font-semibold text-white">{d.name.split(' ').at(-1)?.[0]}</AvatarFallback>
                     </Avatar>
                     <div className="min-w-0 flex-1">
                       <p className="truncate font-semibold">{d.name}</p>
