@@ -1,14 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/nunito";
-@import "@fontsource-variable/baloo-2";
+@import "@fontsource-variable/onest";
+@import "@fontsource-variable/bricolage-grotesque";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --font-heading: 'Baloo 2 Variable', var(--font-sans);
-    --font-sans: 'Nunito Variable', sans-serif;
+    --font-heading: 'Bricolage Grotesque Variable', var(--font-sans);
+    --font-sans: 'Onest Variable', sans-serif;
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -129,17 +129,25 @@
     @apply font-sans;
     }
 }
-/* PediCare warm pediatric theme — later rules win over the generated :root block */
+/* PediCare Aurora Glass theme — later rules win over the generated :root block */
 :root {
-  --radius: 1rem;
-  --background: oklch(0.99 0.005 180);
-  --primary: oklch(0.6 0.1 185);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.95 0.02 180);
-  --accent: oklch(0.93 0.05 40);
-  --accent-foreground: oklch(0.45 0.15 35);
-  --muted: oklch(0.955 0.015 180);
-  --ring: oklch(0.6 0.1 185);
+  --radius: 1.25rem;
+  --background: oklch(0.99 0.004 260);
+  --foreground: oklch(0.24 0.04 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.24 0.04 265);
+  --popover-foreground: oklch(0.24 0.04 265);
+  --primary: oklch(0.55 0.19 265);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.025 265);
+  --secondary-foreground: oklch(0.32 0.06 265);
+  --accent: oklch(0.93 0.045 295);
+  --accent-foreground: oklch(0.42 0.18 295);
+  --muted: oklch(0.96 0.012 260);
+  --muted-foreground: oklch(0.5 0.03 262);
+  --border: oklch(0.91 0.018 262);
+  --input: oklch(0.91 0.018 262);
+  --ring: oklch(0.55 0.19 265);
 }
 
 h1, h2, h3, h4 {
@@ -174,4 +182,65 @@ h1, h2, h3, h4 {
 
 .anim-blob {
   animation: blob-drift 18s ease-in-out infinite;
+}
+
+/* Aurora surfaces */
+@utility glass {
+  background: oklch(1 0 0 / 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid oklch(1 0 0 / 0.7);
+  box-shadow: 0 8px 32px oklch(0.55 0.12 265 / 0.08);
+}
+
+@utility aurora {
+  background:
+    radial-gradient(60rem 42rem at 108% -8%, oklch(0.9 0.06 295 / 0.5), transparent 62%),
+    radial-gradient(52rem 38rem at -12% 8%, oklch(0.91 0.055 245 / 0.55), transparent 60%),
+    radial-gradient(44rem 32rem at 55% 115%, oklch(0.94 0.04 20 / 0.45), transparent 60%),
+    var(--background);
+}
+
+@utility ink-gradient {
+  background-image: linear-gradient(95deg, oklch(0.55 0.19 265), oklch(0.6 0.2 300) 55%, oklch(0.65 0.18 350));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Extra motion */
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes eq-wave {
+  0%, 100% { transform: scaleY(0.35); }
+  50% { transform: scaleY(1); }
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.92) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.anim-marquee { animation: marquee-x 28s linear infinite; }
+.anim-eq { animation: eq-wave 1s ease-in-out infinite; transform-origin: bottom; }
+.anim-pop { animation: pop-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* Scroll reveal (paired with useReveal hook) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none; opacity: 1; transform: none; }
+  .anim-fade-up, .anim-float, .anim-blob, .anim-marquee, .anim-eq, .anim-pop { animation: none; opacity: 1; }
 }
