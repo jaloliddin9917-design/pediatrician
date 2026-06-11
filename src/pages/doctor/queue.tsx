@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import { $cases, $casesLoaded, $casesLoading, caseAccepted, fetchCasesFx } from '@/entities/case/model'
+import { cn } from '@/shared/lib/utils'
 import { Button } from '@/shared/ui/button'
 import { Card, CardContent } from '@/shared/ui/card'
 import { CaseStatusBadge } from '@/shared/ui/case-status-badge'
@@ -12,6 +13,12 @@ import { Skeleton } from '@/shared/ui/skeleton'
 import { UrgencyBadge } from '@/shared/ui/urgency-badge'
 
 const URGENCY_ORDER = { red: 0, yellow: 1, green: 2 } as const
+
+const URGENCY_RAIL = {
+  red: 'border-l-red-400',
+  yellow: 'border-l-amber-400',
+  green: 'border-l-emerald-400',
+} as const
 
 export default function QueuePage() {
   const { t, i18n } = useTranslation()
@@ -39,7 +46,7 @@ export default function QueuePage() {
       ) : (
         <div className="grid gap-3">
           {queue.map((c) => (
-            <Card key={c.id}>
+            <Card key={c.id} className={cn('border-l-4 transition-shadow hover:shadow-md', URGENCY_RAIL[c.urgency])}>
               <CardContent className="grid gap-2 p-4">
                 <div className="flex flex-wrap items-center gap-2">
                   <p className="font-semibold">{c.childName}</p>
