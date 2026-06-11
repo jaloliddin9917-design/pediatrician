@@ -1,9 +1,6 @@
-import { Button } from '@/shared/ui/button'
+import { RouterProvider } from 'react-router'
+import { router } from '@/app/router'
 
 export default function App() {
-  return (
-    <div className="flex min-h-screen items-center justify-center">
-      <Button>PediCare AI</Button>
-    </div>
-  )
+  return <RouterProvider router={router} />
 }
