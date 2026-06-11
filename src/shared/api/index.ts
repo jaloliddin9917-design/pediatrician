@@ -15,3 +15,5 @@ export const api = {
 }
 
 export * from './types'
+export * from './ai-types'
+export * from './ai-fixtures'
