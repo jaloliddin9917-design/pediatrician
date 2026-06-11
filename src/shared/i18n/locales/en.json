@@ -370,7 +370,8 @@
     "complete": "Complete",
     "reopen": "Reopen",
     "create": "Create",
-    "empty": "Nothing here"
+    "empty": "Nothing here",
+    "due": "Due date"
   },
   "formsMod": {
     "subtitle": "Auto-detect PDF fields & fill forms via voice or patient context",

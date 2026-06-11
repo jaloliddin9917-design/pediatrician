@@ -370,7 +370,8 @@
     "complete": "Yakunlash",
     "reopen": "Qaytarish",
     "create": "Yaratish",
-    "empty": "Bu yerda hech narsa yo'q"
+    "empty": "Bu yerda hech narsa yo'q",
+    "due": "Muddat"
   },
   "formsMod": {
     "subtitle": "PDF maydonlarini avtomatik aniqlash va ovoz yoki bemor konteksti orqali to'ldirish",

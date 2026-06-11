@@ -251,12 +251,14 @@ export default function LandingPage() {
     <div ref={revealRef} className="aurora relative min-h-screen overflow-x-clip">
       {/* header */}
       <header className="sticky top-4 z-30 px-4">
-        <div className="glass mx-auto flex h-14 max-w-5xl items-center justify-between gap-3 rounded-full px-3 pl-5">
-          <Link to="/" className="flex items-center gap-2 font-bold text-primary">
+        <div className="glass mx-auto flex h-14 max-w-5xl items-center justify-between gap-2 rounded-full px-3 sm:pl-5">
+          <Link to="/" className="flex shrink-0 items-center gap-2 font-bold text-primary">
             <span className="flex size-8 items-center justify-center rounded-xl bg-primary text-primary-foreground">
               <Baby className="size-4.5" />
             </span>
-            <span className="font-heading text-lg tracking-tight">{t('common.appName')}</span>
+            <span className="font-heading hidden text-lg tracking-tight whitespace-nowrap min-[420px]:inline">
+              {t('common.appName')}
+            </span>
           </Link>
           <nav className="hidden items-center gap-6 text-sm font-medium text-muted-foreground md:flex">
             <a href="#features" className="transition-colors hover:text-foreground">{t('landing.navFeatures')}</a>
