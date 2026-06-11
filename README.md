@@ -1,9 +1,11 @@
 # PediCare AI — frontend mockup
 
 AI-powered pediatrician platform mockup. Two sides: parents (AI symptom
-triage, doctor booking, child profiles, history, vaccination calendar) and
-doctors (triage queue, case detail, schedule). Frontend-only: scripted AI
-dialog and mock data with fake latency. Spec and plan live in
+chat, voice check, AI advisor, doctor booking, child profiles, history,
+vaccination calendar) and doctors (AI-triaged queue, case workspace,
+schedule). A parent's escalated AI check creates a real case in the
+doctor's triage queue (persisted in localStorage). Frontend-only: scripted
+AI and mock data with fake latency. Specs and plans live in
 `docs/superpowers/`.
 
 ## Stack

@@ -4,14 +4,18 @@ import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router'
 import { $activeChild } from '@/entities/child/model'
+import { buildCase } from '@/entities/case/escalate'
+import { caseCreated } from '@/entities/case/model'
 import {
   $messages,
   $quickReplies,
+  $state,
   $typing,
   $verdict,
   chatRestarted,
   replySelected,
 } from '@/features/ai-triage/model/store'
+import { formatAge } from '@/shared/lib/age'
 import { cn } from '@/shared/lib/utils'
 import { Badge } from '@/shared/ui/badge'
 import { Button } from '@/shared/ui/button'
@@ -33,9 +37,31 @@ const VERDICT_LABEL = {
 export default function ChatPage() {
   const { t } = useTranslation()
   const navigate = useNavigate()
-  const [messages, replies, typing, verdict, child] = useUnit([$messages, $quickReplies, $typing, $verdict, $activeChild])
-  const [reply, restart] = useUnit([replySelected, chatRestarted])
+  const [messages, replies, typing, verdict, child, state] = useUnit([
+    $messages,
+    $quickReplies,
+    $typing,
+    $verdict,
+    $activeChild,
+    $state,
+  ])
+  const [reply, restart, escalate] = useUnit([replySelected, chatRestarted, caseCreated])
   const endRef = useRef<HTMLDivElement>(null)
+
+  const connectToDoctor = () => {
+    if (verdict) {
+      escalate(
+        buildCase({
+          childName: child?.name ?? '—',
+          childAge: child ? formatAge(child.birthDate) : '—',
+          urgency: verdict,
+          summary: `AI chat check: ${state.answers.map((k) => t(k, { lng: 'en' })).join(' · ')}`,
+          lines: messages.map((m) => ({ author: m.author, text: t(m.key, { lng: 'en' }) })),
+        }),
+      )
+    }
+    navigate('/parent/doctors')
+  }
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -80,7 +106,7 @@ export default function ChatPage() {
             <div className={cn('rounded-2xl border p-4 text-sm font-medium', VERDICT_STYLES[verdict])}>
               <p>{t(VERDICT_LABEL[verdict])}</p>
               {verdict !== 'green' && (
-                <Button className="mt-3" onClick={() => navigate('/parent/doctors')}>
+                <Button className="mt-3" onClick={connectToDoctor}>
                   {t('chat.connectDoctor')}
                 </Button>
               )}

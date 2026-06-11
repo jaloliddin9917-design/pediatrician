@@ -18,15 +18,8 @@ const VaccinesPage = lazy(() => import('@/pages/parent/vaccines'))
 const QueuePage = lazy(() => import('@/pages/doctor/queue'))
 const CaseDetailPage = lazy(() => import('@/pages/doctor/case-detail'))
 const SchedulePage = lazy(() => import('@/pages/doctor/schedule'))
-const ScribePage = lazy(() => import('@/pages/doctor/scribe'))
-const ReceptionistPage = lazy(() => import('@/pages/doctor/receptionist'))
-const BillingPage = lazy(() => import('@/pages/doctor/billing'))
-const EvidentiaPage = lazy(() => import('@/pages/doctor/evidentia'))
-const NursePage = lazy(() => import('@/pages/doctor/nurse'))
-const CommsPage = lazy(() => import('@/pages/doctor/comms'))
-const CanvasPage = lazy(() => import('@/pages/doctor/canvas'))
-const TasksPage = lazy(() => import('@/pages/doctor/tasks'))
-const FormsPage = lazy(() => import('@/pages/doctor/forms'))
+const VoiceCheckPage = lazy(() => import('@/pages/parent/voice'))
+const AdvisorPage = lazy(() => import('@/pages/parent/advisor'))
 
 const s = (node: ReactNode) => <Suspense fallback={null}>{node}</Suspense>
 
@@ -44,6 +37,8 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: s(<ParentHomePage />) },
       { path: 'chat', element: s(<ChatPage />) },
+      { path: 'voice', element: s(<VoiceCheckPage />) },
+      { path: 'advisor', element: s(<AdvisorPage />) },
       { path: 'doctors', element: s(<DoctorsPage />) },
       { path: 'doctors/:id', element: s(<DoctorProfilePage />) },
       { path: 'children', element: s(<ChildrenPage />) },
@@ -62,15 +57,6 @@ export const router = createBrowserRouter([
       { index: true, element: s(<QueuePage />) },
       { path: 'cases/:id', element: s(<CaseDetailPage />) },
       { path: 'schedule', element: s(<SchedulePage />) },
-      { path: 'scribe', element: s(<ScribePage />) },
-      { path: 'receptionist', element: s(<ReceptionistPage />) },
-      { path: 'billing', element: s(<BillingPage />) },
-      { path: 'evidentia', element: s(<EvidentiaPage />) },
-      { path: 'nurse', element: s(<NursePage />) },
-      { path: 'comms', element: s(<CommsPage />) },
-      { path: 'canvas', element: s(<CanvasPage />) },
-      { path: 'tasks', element: s(<TasksPage />) },
-      { path: 'forms', element: s(<FormsPage />) },
     ],
   },
   { path: '*', element: s(<NotFoundPage />) },

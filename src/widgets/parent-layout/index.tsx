@@ -1,4 +1,4 @@
-import { Baby, History, Home, MessageCircle, Stethoscope, Syringe } from 'lucide-react'
+import { Baby, History, Home, MessageCircle, Mic, NotebookPen, Stethoscope, Syringe } from 'lucide-react'
 import { AppShell, type NavSection } from '@/widgets/app-shell'
 
 const SECTIONS: NavSection[] = [
@@ -6,6 +6,8 @@ const SECTIONS: NavSection[] = [
     items: [
       { to: '/parent', end: true, icon: Home, key: 'nav.home' },
       { to: '/parent/chat', icon: MessageCircle, key: 'nav.aiChat' },
+      { to: '/parent/voice', icon: Mic, key: 'nav.voice' },
+      { to: '/parent/advisor', icon: NotebookPen, key: 'nav.advisor' },
       { to: '/parent/doctors', icon: Stethoscope, key: 'nav.doctors' },
       { to: '/parent/children', icon: Baby, key: 'nav.children' },
       { to: '/parent/history', icon: History, key: 'nav.history' },

@@ -2,26 +2,20 @@ import { useUnit } from 'effector-react'
 import {
   ArrowRight,
   Baby,
-  BookOpen,
   Bot,
   CalendarCheck,
+  CalendarDays,
   Check,
-  ClipboardCheck,
-  FilePen,
+  ClipboardList,
   FileText,
-  LayoutGrid,
-  ListChecks,
-  Mail,
   MessageCircle,
-  MessageSquare,
   Mic,
-  Phone,
-  PhoneCall,
-  Printer,
+  NotebookPen,
   ShieldCheck,
   Sparkles,
   Star,
   Stethoscope,
+  Syringe,
   type LucideIcon,
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
@@ -38,7 +32,6 @@ type VignetteKind =
   | 'billing'
   | 'evidentia'
   | 'nurse'
-  | 'comms'
   | 'canvas'
   | 'tasks'
   | 'forms'
@@ -51,19 +44,19 @@ interface Feature {
   vignette: VignetteKind
 }
 
-const CLINICAL: Feature[] = [
-  { icon: Mic, tint: 'bg-sky-100 text-sky-600', titleKey: 'landing.fScribeT', descKey: 'landing.fScribeD', vignette: 'scribe' },
-  { icon: PhoneCall, tint: 'bg-violet-100 text-violet-600', titleKey: 'landing.fReceptionT', descKey: 'landing.fReceptionD', vignette: 'reception' },
-  { icon: FileText, tint: 'bg-emerald-100 text-emerald-600', titleKey: 'landing.fBillingT', descKey: 'landing.fBillingD', vignette: 'billing' },
-  { icon: BookOpen, tint: 'bg-indigo-100 text-indigo-600', titleKey: 'landing.fEvidentiaT', descKey: 'landing.fEvidentiaD', vignette: 'evidentia' },
+const PARENT_FEATURES: Feature[] = [
+  { icon: MessageCircle, tint: 'bg-sky-100 text-sky-600', titleKey: 'landing.p1T', descKey: 'landing.p1D', vignette: 'reception' },
+  { icon: Mic, tint: 'bg-violet-100 text-violet-600', titleKey: 'landing.p2T', descKey: 'landing.p2D', vignette: 'scribe' },
+  { icon: NotebookPen, tint: 'bg-emerald-100 text-emerald-600', titleKey: 'landing.p3T', descKey: 'landing.p3D', vignette: 'forms' },
+  { icon: CalendarCheck, tint: 'bg-amber-100 text-amber-600', titleKey: 'landing.p4T', descKey: 'landing.p4D', vignette: 'nurse' },
+  { icon: Syringe, tint: 'bg-indigo-100 text-indigo-600', titleKey: 'landing.p5T', descKey: 'landing.p5D', vignette: 'canvas' },
 ]
 
-const OPERATIONS: Feature[] = [
-  { icon: ClipboardCheck, tint: 'bg-orange-100 text-orange-600', titleKey: 'landing.fNurseT', descKey: 'landing.fNurseD', vignette: 'nurse' },
-  { icon: Printer, tint: 'bg-sky-100 text-sky-600', titleKey: 'landing.fCommsT', descKey: 'landing.fCommsD', vignette: 'comms' },
-  { icon: LayoutGrid, tint: 'bg-rose-100 text-rose-600', titleKey: 'landing.fCanvasT', descKey: 'landing.fCanvasD', vignette: 'canvas' },
-  { icon: ListChecks, tint: 'bg-red-100 text-red-600', titleKey: 'landing.fTasksT', descKey: 'landing.fTasksD', vignette: 'tasks' },
-  { icon: FilePen, tint: 'bg-amber-100 text-amber-600', titleKey: 'landing.fFormsT', descKey: 'landing.fFormsD', vignette: 'forms' },
+const DOCTOR_FEATURES: Feature[] = [
+  { icon: ClipboardList, tint: 'bg-red-100 text-red-600', titleKey: 'landing.d1T', descKey: 'landing.d1D', vignette: 'evidentia' },
+  { icon: FileText, tint: 'bg-sky-100 text-sky-600', titleKey: 'landing.d2T', descKey: 'landing.d2D', vignette: 'reception' },
+  { icon: Stethoscope, tint: 'bg-rose-100 text-rose-600', titleKey: 'landing.d3T', descKey: 'landing.d3D', vignette: 'billing' },
+  { icon: CalendarDays, tint: 'bg-orange-100 text-orange-600', titleKey: 'landing.d4T', descKey: 'landing.d4D', vignette: 'tasks' },
 ]
 
 function Vignette({ kind }: { kind: VignetteKind }) {
@@ -114,15 +107,6 @@ function Vignette({ kind }: { kind: VignetteKind }) {
               <span className="h-1.5 w-12 rounded-full bg-orange-100" />
             </span>
           ))}
-        </div>
-      )
-    case 'comms':
-      return (
-        <div className="flex gap-1.5 text-sky-500">
-          <Printer className="size-4" />
-          <Mail className="size-4" />
-          <MessageSquare className="size-4" />
-          <Phone className="size-4" />
         </div>
       )
     case 'canvas':
@@ -290,9 +274,9 @@ export default function LandingPage() {
       <main className="relative z-10">
         {/* hero */}
         <section className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 pt-16 pb-20 lg:grid-cols-[1.05fr_1fr] lg:pt-24">
-          <FloatingTile icon={Mic} tint="bg-sky-100 text-sky-600" className="top-16 right-[44%]" delay="0s" />
-          <FloatingTile icon={BookOpen} tint="bg-indigo-100 text-indigo-600" className="top-10 right-6" delay="-2.5s" />
-          <FloatingTile icon={ListChecks} tint="bg-red-100 text-red-600" className="right-[2%] bottom-16" delay="-4.5s" />
+          <FloatingTile icon={Mic} tint="bg-violet-100 text-violet-600" className="top-16 right-[44%]" delay="0s" />
+          <FloatingTile icon={MessageCircle} tint="bg-sky-100 text-sky-600" className="top-10 right-6" delay="-2.5s" />
+          <FloatingTile icon={Syringe} tint="bg-indigo-100 text-indigo-600" className="right-[2%] bottom-16" delay="-4.5s" />
 
           <div className="flex min-w-0 flex-col gap-6">
             <span className="anim-fade-up inline-flex w-fit items-center gap-1.5 rounded-full border border-primary/20 bg-white/70 px-3.5 py-1.5 text-xs font-semibold text-primary backdrop-blur">
@@ -383,20 +367,20 @@ export default function LandingPage() {
           <div className="grid gap-6 md:grid-cols-2">
             <div className="glass reveal rounded-3xl p-4 sm:p-6">
               <p className="px-4 pt-2 pb-3 text-xs font-semibold tracking-[0.22em] text-muted-foreground uppercase">
-                {t('landing.clinical')}
+                {t('landing.parentAi')}
               </p>
               <div className="grid gap-1">
-                {CLINICAL.map((f) => (
+                {PARENT_FEATURES.map((f) => (
                   <FeatureRow key={f.titleKey} feature={f} />
                 ))}
               </div>
             </div>
             <div className="glass reveal rounded-3xl p-4 sm:p-6" style={{ transitionDelay: '120ms' }}>
               <p className="px-4 pt-2 pb-3 text-xs font-semibold tracking-[0.22em] text-muted-foreground uppercase">
-                {t('landing.operations')}
+                {t('landing.doctorTools')}
               </p>
               <div className="grid gap-1">
-                {OPERATIONS.map((f) => (
+                {DOCTOR_FEATURES.map((f) => (
                   <FeatureRow key={f.titleKey} feature={f} />
                 ))}
               </div>
