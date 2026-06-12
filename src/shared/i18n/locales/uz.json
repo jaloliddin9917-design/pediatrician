@@ -19,7 +19,9 @@
     "queue": "Triaj navbati",
     "schedule": "Jadval",
     "voice": "Ovozli tekshiruv",
-    "advisor": "AI maslahatchi"
+    "advisor": "AI maslahatchi",
+    "dashboard": "Umumiy",
+    "patients": "Bemorlar"
   },
   "auth": {
     "loginTitle": "Xush kelibsiz",
@@ -310,5 +312,38 @@
     "wDrowsy": "Bu shoshilinch — hozir pediatr bilan bog'laning",
     "aGen": "Bolani kuzating va bir necha soatdan keyin qayta tekshiring.",
     "wGen": "Ota-ona sezgisi nimadir noto'g'ri deyapti"
+  },
+  "dash": {
+    "statNew": "Yangi holatlar",
+    "statUrgent": "Shoshilinch",
+    "statVisits": "Bugungi qabullar",
+    "statActive": "Jarayonda",
+    "nextVisit": "Keyingi qabul",
+    "join": "Videoga ulanish",
+    "connecting": "Ulanmoqda...",
+    "inCall": "Qo'ng'iroqda",
+    "endCall": "Tugatish",
+    "urgentQueue": "E'tibor talab qiladi",
+    "openQueue": "Navbatni ochish",
+    "todayList": "Bugungi qabullar",
+    "allClear": "Hammasi tinch — shoshilinch holatlar yo'q",
+    "videoVisit": "Video konsultatsiya"
+  },
+  "patients": {
+    "search": "Bola ismi bo'yicha qidirish",
+    "visits": "murojaat",
+    "lastContact": "Oxirgi aloqa",
+    "historyTitle": "Holatlar tarixi",
+    "empty": "Hozircha bemorlar yo'q"
+  },
+  "doctorX": {
+    "filterAll": "Hammasi",
+    "searchCases": "Holatlarni qidirish...",
+    "waiting": "kutmoqda",
+    "reported": "Ota-ona xabar berdi",
+    "emptyFilter": "Filtr bo'yicha hech narsa topilmadi",
+    "today": "Bugun",
+    "emptyDay": "Bu kunda qabullar yo'q",
+    "visitsShort": "qabul"
   }
 }

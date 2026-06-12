@@ -15,7 +15,9 @@ const DoctorProfilePage = lazy(() => import('@/pages/parent/doctor-profile'))
 const ChildrenPage = lazy(() => import('@/pages/parent/children'))
 const HistoryPage = lazy(() => import('@/pages/parent/history'))
 const VaccinesPage = lazy(() => import('@/pages/parent/vaccines'))
+const DoctorDashboardPage = lazy(() => import('@/pages/doctor/dashboard'))
 const QueuePage = lazy(() => import('@/pages/doctor/queue'))
+const PatientsPage = lazy(() => import('@/pages/doctor/patients'))
 const CaseDetailPage = lazy(() => import('@/pages/doctor/case-detail'))
 const SchedulePage = lazy(() => import('@/pages/doctor/schedule'))
 const VoiceCheckPage = lazy(() => import('@/pages/parent/voice'))
@@ -54,7 +56,9 @@ export const router = createBrowserRouter([
       </RoleGuard>
     ),
     children: [
-      { index: true, element: s(<QueuePage />) },
+      { index: true, element: s(<DoctorDashboardPage />) },
+      { path: 'queue', element: s(<QueuePage />) },
+      { path: 'patients', element: s(<PatientsPage />) },
       { path: 'cases/:id', element: s(<CaseDetailPage />) },
       { path: 'schedule', element: s(<SchedulePage />) },
     ],

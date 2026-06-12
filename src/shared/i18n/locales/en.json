@@ -19,7 +19,9 @@
     "queue": "Triage queue",
     "schedule": "Schedule",
     "voice": "Voice Check",
-    "advisor": "AI Advisor"
+    "advisor": "AI Advisor",
+    "dashboard": "Overview",
+    "patients": "Patients"
   },
   "auth": {
     "loginTitle": "Welcome back",
@@ -310,5 +312,38 @@
     "wDrowsy": "This is urgent — connect to a pediatrician right now",
     "aGen": "Observe your child and re-check in a few hours.",
     "wGen": "Your parental instinct says something is wrong"
+  },
+  "dash": {
+    "statNew": "New cases",
+    "statUrgent": "Urgent",
+    "statVisits": "Visits today",
+    "statActive": "In progress",
+    "nextVisit": "Next visit",
+    "join": "Join video",
+    "connecting": "Connecting...",
+    "inCall": "In call",
+    "endCall": "End",
+    "urgentQueue": "Needs attention",
+    "openQueue": "Open queue",
+    "todayList": "Today's visits",
+    "allClear": "All clear — no urgent cases",
+    "videoVisit": "Video consultation"
+  },
+  "patients": {
+    "search": "Search by child name",
+    "visits": "visits",
+    "lastContact": "Last contact",
+    "historyTitle": "Case history",
+    "empty": "No patients yet"
+  },
+  "doctorX": {
+    "filterAll": "All",
+    "searchCases": "Search cases...",
+    "waiting": "waiting",
+    "reported": "Parent reported",
+    "emptyFilter": "Nothing matches the filter",
+    "today": "Today",
+    "emptyDay": "No visits this day",
+    "visitsShort": "visits"
   }
 }
