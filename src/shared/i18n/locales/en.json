@@ -327,7 +327,11 @@
     "openQueue": "Open queue",
     "todayList": "Today's visits",
     "allClear": "All clear — no urgent cases",
-    "videoVisit": "Video consultation"
+    "videoVisit": "Video consultation",
+    "thisWeek": "This week",
+    "visitsLabel": "visits",
+    "nextInLine": "next in line",
+    "age": "Age"
   },
   "patients": {
     "search": "Search by child name",

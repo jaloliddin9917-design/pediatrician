@@ -327,7 +327,11 @@
     "openQueue": "Navbatni ochish",
     "todayList": "Bugungi qabullar",
     "allClear": "Hammasi tinch — shoshilinch holatlar yo'q",
-    "videoVisit": "Video konsultatsiya"
+    "videoVisit": "Video konsultatsiya",
+    "thisWeek": "Shu hafta",
+    "visitsLabel": "qabul",
+    "nextInLine": "navbatda keyingi",
+    "age": "Yosh"
   },
   "patients": {
     "search": "Bola ismi bo'yicha qidirish",
